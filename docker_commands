@@ -1,4 +1,4 @@
-## Docker commands used to build the application 
+## Docker commands used to build the application
 # TODO: insert the docker build command
 
 ## Docker commands used to run the application
@@ -8,4 +8,67 @@
 # TODO: insert the docker logs command
 
 ## Logs from the container running the TechTrends application
-# TODO: paste logs from the Docker container 
+# TODO: paste logs from the Docker container
+
+
+## Docker Login
+
+docker login -u kingdawit -p password
+
+## Commands used to build the application
+
+docker build -t techtrends .
+
+## commands to test and run the application
+
+docker run -dp 7111:3111 techtrends
+
+## Docker run output
+f125c84d1bc0c6805cfe4d6fdb50999873ebd4faaf0f4f580ac46dcd6e5047de
+
+## Docker command to retrieve the logs
+
+docker logs f125c84d1bc0c6805cfe4d6fdb50999873ebd4faaf0f4f580ac46dcd6e5047de
+
+* Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://172.17.0.2:3111/ (Press CTRL+C to quit)
+WARNING:werkzeug: * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+INFO:werkzeug: * Running on http://172.17.0.2:3111/ (Press CTRL+C to quit)
+INFO:werkzeug:172.17.0.1 - - [08/Dec/2022 15:04:09] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [08/Dec/2022 15:04:09] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [08/Dec/2022 15:04:09] "GET /static/css/main.css HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [08/Dec/2022 15:04:09] "GET /static/css/main.css HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [08/Dec/2022 15:04:09] "GET /favicon.ico HTTP/1.1" 404 -
+INFO:werkzeug:172.17.0.1 - - [08/Dec/2022 15:04:09] "GET /favicon.ico HTTP/1.1" 404 -
+INFO:werkzeug:172.17.0.1 - - [08/Dec/2022 15:04:47] "GET /create HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [08/Dec/2022 15:04:47] "GET /create HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [08/Dec/2022 15:04:47] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:172.17.0.1 - - [08/Dec/2022 15:04:47] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:172.17.0.1 - - [08/Dec/2022 15:05:02] "POST /create HTTP/1.1" 302 -
+INFO:werkzeug:172.17.0.1 - - [08/Dec/2022 15:05:02] "POST /create HTTP/1.1" 302 -
+INFO:werkzeug:172.17.0.1 - - [08/Dec/2022 15:05:02] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [08/Dec/2022 15:05:02] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [08/Dec/2022 15:05:02] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:172.17.0.1 - - [08/Dec/2022 15:05:02] "GET /static/css/main.css HTTP/1.1" 304 -
+DEBUG:app:Thu Dec  8 15:05:27 2022, Test debug message
+DEBUG:app:Thu Dec  8 15:05:27 2022, Test debug message
+INFO:werkzeug:172.17.0.1 - - [08/Dec/2022 15:05:27] "GET /healthz HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [08/Dec/2022 15:05:27] "GET /healthz HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [08/Dec/2022 15:05:38] "GET /metrics HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [08/Dec/2022 15:05:38] "GET /metrics HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [08/Dec/2022 15:05:46] "GET /home HTTP/1.1" 404 -
+INFO:werkzeug:172.17.0.1 - - [08/Dec/2022 15:05:46] "GET /home HTTP/1.1" 404 -
+
+
+## Docker command to tag the image
+docker tag techtrends kingdawit/techtrends:v1.0.0 
+
+## Docker command to push the images to dockerhub
+docker push kingdawit/techtrends:v1.0.0
